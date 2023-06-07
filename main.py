@@ -6,14 +6,6 @@ from io import BytesIO
 
 app = Flask(__name__)
 
-@app.route("/")
-def root():
-   return '''<form action="/qr" method="GET">
-      <input type="text" name="msg" placeholder="Enter prompt"/>
-      <input type="submit" value="QR-code"/>
-   </form>'''
-
-
 @app.route("/qr")
 def qr():
    msg = request.args.get('msg')
